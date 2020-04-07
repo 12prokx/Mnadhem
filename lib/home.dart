@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with TickerProviderStateMixin {
   String date;
+  int index;
   final dbhelper = Databasehelper.instance;
   DateTime _day;
 
@@ -45,7 +46,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, index) {
           _day = widget.now.add(new Duration(days: index));
-          print(_day);
           return SingleChildScrollView(
             child: Column(
               children: <Widget>[
